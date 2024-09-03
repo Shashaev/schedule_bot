@@ -1,0 +1,1 @@
+insert into students (user_name) select %(name)s
