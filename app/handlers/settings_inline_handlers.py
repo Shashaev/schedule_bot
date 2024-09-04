@@ -40,7 +40,7 @@ async def handler_callback_query_change_group(callback: CallbackQuery):
 Вы изменили настройки вашего профиля.
 Теперь ваша подгруппа по английскому: {callback.data.split('_')[-1]}.
     """
-    execute_sql('sql/comonds_sql/update/update_user_local_group_english.sql', {
+    execute_sql('sql/command_sql/update/update_user_local_group_english.sql', {
         'local_group_english': int(callback.data.split('_')[-1]),
         'user_name': callback.from_user.username
     })
@@ -53,7 +53,7 @@ async def handler_callback_query_change_group(callback: CallbackQuery):
 Вы изменили настройки вашего профиля.
 Теперь ваша подгруппа: {callback.data.split('_')[-1]}.
     """
-    execute_sql('sql/comonds_sql/update/update_user_local_group.sql', {
+    execute_sql('sql/command_sql/update/update_user_local_group.sql', {
         'local_group': int(callback.data.split('_')[-1]),
         'user_name': callback.from_user.username
     })
@@ -74,7 +74,7 @@ async def handler_callback_query_change_group(callback: CallbackQuery):
 Вы изменили настройки вашего профиля.
 Теперь чётность недели: {['нечётная', 'чётная'][callback.data.split('_')[-1] == 'even']}.
     """
-    execute_sql('sql/comonds_sql/update/update_user_parity_week.sql', {
+    execute_sql('sql/command_sql/update/update_user_parity_week.sql', {
         'parity_week': callback.data.split('_')[-1],
         'user_name': callback.from_user.username
     })

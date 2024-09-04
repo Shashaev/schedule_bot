@@ -13,7 +13,7 @@ async def handler_state_write_group(message: Message, state: FSMContext):
 Вы изменили настройки вашего профиля.
 Теперь ваша группа: {message.text.upper()}.
     """
-    execute_sql('sql/comonds_sql/update/update_user_group.sql',
+    execute_sql('sql/command_sql/update/update_user_group.sql',
                 {'group': message.text.upper(),
                  'user_name': message.from_user.username})
     await state.set_state(States.BASE_WORK)
