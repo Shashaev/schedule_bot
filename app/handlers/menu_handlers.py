@@ -1,11 +1,12 @@
 from aiogram import Router, F
 from aiogram.types import Message
-
+from app.keyboards.inline_keyboards import settings
+from app.states import States
 
 router = Router()
 
 
-@router.message(F.text == '/about')
+@router.message(States.BASE_WORK, F.text == '/about')
 async def handler_command_about(message: Message):
     text_answer = """
 Немного о боте!
@@ -22,7 +23,7 @@ async def handler_command_about(message: Message):
     await message.answer(text_answer)
 
 
-@router.message(F.text == '/help')
+@router.message(States.BASE_WORK, F.text == '/help')
 async def handler_command_help(message: Message):
     answer_text = """
 Потдержка проекта!
@@ -32,3 +33,12 @@ async def handler_command_help(message: Message):
     """
     await message.answer(answer_text)
 
+
+@router.message(States.BASE_WORK, F.text == '/settings')
+async def handler_command_setting(message: Message):
+    answer_text = """
+Меню!
+
+Для изменения параметров нажмите на соответствующую кнопку ниже.
+    """
+    await message.answer(answer_text, reply_markup=settings)
