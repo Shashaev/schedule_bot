@@ -3,6 +3,7 @@ from aiogram.types import Message
 from aiogram.fsm.context import FSMContext
 from sql.utils import execute_sql
 from app.states import States
+from app.keyboards.specials_keyboards import reply_keyboard
 
 router = Router()
 
@@ -17,4 +18,4 @@ async def handler_command_start(message: Message, state: FSMContext):
     execute_sql('sql/command_sql/insert/include_user.sql',
                 {'name': message.from_user.username})
     await state.set_state(States.BASE_WORK)
-    await message.answer(text_answer)
+    await message.answer(text_answer, reply_markup=reply_keyboard)

@@ -21,3 +21,13 @@ parity_week = InlineKeyboardMarkup(inline_keyboard=[
     [InlineKeyboardButton(text='Чётная', callback_data='change_parity_week_even')],
     [InlineKeyboardButton(text='Нечётная', callback_data='change_parity_week_odd')]
 ])
+
+week_days = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text='Понедельник', callback_data='week_days_monday'),
+     InlineKeyboardButton(text='Вторник', callback_data='week_days_tuesday')],
+    [InlineKeyboardButton(text='Среда', callback_data='week_days_wednesday'),
+     InlineKeyboardButton(text='Четверг', callback_data='week_days_thursday')],
+    [InlineKeyboardButton(text='Пятница', callback_data='week_days_friday'),
+     InlineKeyboardButton(text='Суббота', callback_data='week_days_saturday')],
+    [InlineKeyboardButton(text='Воскресенье', callback_data='week_days_sunday')]
+])
