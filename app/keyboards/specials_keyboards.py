@@ -8,4 +8,4 @@ menu = [BotCommand(command='/about', description='Описание бота'),
 reply_keyboard = ReplyKeyboardMarkup(keyboard=[
         [KeyboardButton(text='Вчера'), KeyboardButton(text='Сегодня'), KeyboardButton(text='Завтра')],
         [KeyboardButton(text='Дни недели')]
-])
+], resize_keyboard=True)
