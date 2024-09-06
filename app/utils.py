@@ -18,7 +18,7 @@ def get_schedule(user_name: str, week_day: str) -> str:
     for el in data:
         formated_schedule += __get_formated_schedule(el.get('name'), el.get('start_time'), el.get('end_time'),
                                                      el.get('displayed'), el.get('features'), el.get('office'))
-        formated_schedule += '#' * 25
+        formated_schedule += '-' * 50
     return formated_schedule
 
 
